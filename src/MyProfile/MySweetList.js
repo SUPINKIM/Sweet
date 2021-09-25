@@ -16,7 +16,7 @@ const ListsContainer = styled.div`
 
 const ListContainer = styled.div`
   width: 70%;
-  height: 100px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,8 +96,8 @@ const MySweetList = () => {
           사용자 작성 트윗을 불러오는 데 문제가 발생했습니다. 잠시 후 새로고침
           해주세요.
         </div>
-      ) : userTweets?.length ? (
-        userTweets.map(({ timestamp, text, tweetId, images }) => (
+      ) : userTweets?.length && userTweets[0] !== 'none' ? (
+        userTweets.map(({ timestamp, text, tweetId }) => (
           <ListContainer key={tweetId}>
             <Span name='written_time'>{timeChanger(timestamp)}</Span>
             <SpanContent name='contents'>{text}</SpanContent>
