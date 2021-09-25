@@ -14,7 +14,7 @@ const Navbar = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
-        window.location.replace('/');
+        window.location.replace('/sweet');
       })
       .catch((error) => {
         alert(
