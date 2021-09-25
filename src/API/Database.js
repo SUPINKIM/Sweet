@@ -156,7 +156,7 @@ const database = {
         await get(child(DB_REF, `users/user-${uid}/tweetId`))
       ).val();
 
-      if (userTweetIds[0] !== 'none') {
+      if (userTweetIds && userTweetIds[0] !== 'none') {
         for (let id of userTweetIds) {
           const writtenPost = await (
             await get(child(DB_REF, `tweets/tweet-${id}`))

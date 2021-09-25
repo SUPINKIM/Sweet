@@ -87,8 +87,6 @@ const MySweetList = () => {
     }
   };
 
-  console.log(userTweets);
-
   return loading ? (
     <Loading />
   ) : (
