@@ -152,15 +152,17 @@ const database = {
     } = auth;
 
     try {
-      const userTweetIds =
-        (await (await get(child(DB_REF, `users/user-${uid}/tweetId`))).val()) ??
-        [];
+      const userTweetIds = await (
+        await get(child(DB_REF, `users/user-${uid}/tweetId`))
+      ).val();
 
-      for (let id of userTweetIds) {
-        const writtenPost = await (
-          await get(child(DB_REF, `tweets/tweet-${id}`))
-        ).val();
-        userTweetArray.push(writtenPost);
+      if (userTweetIds[0] !== 'none') {
+        for (let id of userTweetIds) {
+          const writtenPost = await (
+            await get(child(DB_REF, `tweets/tweet-${id}`))
+          ).val();
+          userTweetArray.push(writtenPost);
+        }
       }
 
       return { success: true, response: userTweetArray };
