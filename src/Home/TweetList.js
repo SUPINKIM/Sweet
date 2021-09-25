@@ -44,7 +44,7 @@ const SocialContainer = ({
   const [selectedHash, setSelectedHash] = useState(false);
 
   useEffect(() => {
-    if (likesTweets.includes(tweetId)) {
+    if (likesTweets && likesTweets.includes(tweetId)) {
       setSelected(true);
     }
   }, []);
@@ -177,6 +177,7 @@ const TweetList = () => {
   const [tweetList, setTweetList] = useState([]);
   const [searchWord, setSearchWord] = useState('');
   const [unfilteredLists, setUnfilteredLists] = useState('');
+  const [searching, setSearching] = useState(false);
 
   /* 로그인한 유저가 '좋아요'를 누른 트윗 목록 */
   const [socialLikeTweets, setSocialLikeTweets] = useState([]);
@@ -191,9 +192,11 @@ const TweetList = () => {
           temp.push(list);
         });
         temp.sort((list1, list2) => list2.timestamp - list1.timestamp);
-        setTweetList(temp);
+        if (searching) {
+          setTweetList(temp);
+          setSearchWord('');
+        }
         setUnfilteredLists(temp);
-        setSearchWord('');
       }
     });
   };
@@ -201,6 +204,7 @@ const TweetList = () => {
   const filterLists = (reset = false) => {
     if (reset) {
       setTweetList(unfilteredLists);
+      setSearching(false);
     } else {
       const temp = [];
       for (let i = 0; i < unfilteredLists.length; i++) {
@@ -213,19 +217,26 @@ const TweetList = () => {
         }
       }
       setTweetList(temp);
+      setSearching(true);
     }
   };
 
   useEffect(() => {
-    if (!searchWord) {
+    if (!searchWord && searching) {
       filterLists(true);
     }
-  }, [searchWord, unfilteredLists]);
+  }, [searching]);
 
   useEffect(() => {
     listenTweetDB();
-    setUnfilteredLists([...tweetList]);
+    setUnfilteredLists(tweetList);
   }, [loading]);
+
+  useEffect(() => {
+    if (!searching) {
+      setTweetList(unfilteredLists);
+    }
+  }, [unfilteredLists]);
 
   useEffect(() => {
     const { fetchData, fetchUserLikedTweet } = database;

@@ -11,7 +11,6 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   row-gap: 20px;
   align-items: center;
-  overflow: auto;
   @media (max-width: 870px) {
     height: 100vh;
     flex-direction: row;
@@ -31,7 +30,7 @@ export const ContentsContainer = styled.div`
     display: none;
   }
   @media (max-width: 870px) {
-    height: calc(100vh - 20px);
+    height: 100vh;
     flex-direction: column;
     align-items: center;
     row-gap: 10px;

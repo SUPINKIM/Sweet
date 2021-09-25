@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/Sweet/static/js/main.918ae6c7.chunk.js",
-    "main.js.map": "/Sweet/static/js/main.918ae6c7.chunk.js.map",
-    "runtime-main.js": "/Sweet/static/js/runtime-main.e3ac2695.js",
-    "runtime-main.js.map": "/Sweet/static/js/runtime-main.e3ac2695.js.map",
-    "static/js/2.e7509346.chunk.js": "/Sweet/static/js/2.e7509346.chunk.js",
-    "static/js/2.e7509346.chunk.js.map": "/Sweet/static/js/2.e7509346.chunk.js.map",
-    "index.html": "/Sweet/index.html",
-    "static/js/2.e7509346.chunk.js.LICENSE.txt": "/Sweet/static/js/2.e7509346.chunk.js.LICENSE.txt"
+    "main.js": "/sweet/static/js/main.efcfea73.chunk.js",
+    "main.js.map": "/sweet/static/js/main.efcfea73.chunk.js.map",
+    "runtime-main.js": "/sweet/static/js/runtime-main.4c1d741a.js",
+    "runtime-main.js.map": "/sweet/static/js/runtime-main.4c1d741a.js.map",
+    "static/js/2.c9ba3887.chunk.js": "/sweet/static/js/2.c9ba3887.chunk.js",
+    "static/js/2.c9ba3887.chunk.js.map": "/sweet/static/js/2.c9ba3887.chunk.js.map",
+    "index.html": "/sweet/index.html",
+    "static/js/2.c9ba3887.chunk.js.LICENSE.txt": "/sweet/static/js/2.c9ba3887.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e3ac2695.js",
-    "static/js/2.e7509346.chunk.js",
-    "static/js/main.918ae6c7.chunk.js"
+    "static/js/runtime-main.4c1d741a.js",
+    "static/js/2.c9ba3887.chunk.js",
+    "static/js/main.efcfea73.chunk.js"
   ]
 }
